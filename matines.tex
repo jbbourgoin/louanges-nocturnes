@@ -1,0 +1,117 @@
+%%% Local Variables: 
+%%% coding: utf-8
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% End: 
+
+\documentclass[twoside, 10pt, draft]{book}
+% format lulu
+\usepackage[margin=1.5cm, paperwidth=15.24cm, paperheight=22.86cm]{geometry}
+\usepackage{fontspec}
+\setmainfont[Mapping=tex-text]{Linux Libertine O}
+\usepackage[latin, french]{babel}
+\usepackage{at}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{verse}
+\usepackage{tocbibind}
+\usepackage{multind}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{pdfcolparallel}
+\usepackage{paralist}
+\usepackage{parcolumns}
+\usepackage{lettrine}
+\usepackage{yfonts}
+\usepackage{multind}
+\usepackage[rm,sc,big,center]{titlesec}
+\titlelabel{}
+\titleformat*{\section}{\LARGE\scshape\centering}
+%% césures
+%\usepackage{hyphenat}
+%\hyphenpenalty=1000
+\usepackage{microtype}
+%\usepackage{ragged2e}
+\makeindex{antiphonae}
+\makeindex{responsoria}
+\makeindex{orationes}
+\makeindex{hymni}
+\makeindex{psalmi}
+\makeindex{vetus}
+\makeindex{novum}
+\makeindex{lectiones}
+\bibliographystyle{plain}
+%\hfuzz=1pt
+
+
+\setromanfont[Mapping=tex-text, Numbers=OldStyle, Ligatures=Historical, Alternate=1]{Linux Libertine O}
+\newfontfamily\freeserif{FreeSerif}
+\newfontfamily\biolinum{Linux Biolinum O}
+%\let\guillemotleft«
+%\let\guillemotright»
+\newcommand{\enluminure}[2]{\lettrine[lines=3]{\small \initfamily #1}{#2}}
+
+\newcommand{\LG}{fr}
+\newcommand{\LGredef}{fr}
+\parindent = 0pt
+\include{macros}
+
+\title{Louanges Nocturnes}
+\subtitle{}
+\author{\textsc{}}
+\email{jeanbaptiste.bourgoin@gmail.com}
+\date{2013}
+
+\begin{document}
+
+\input{sources/psalmi/psautiervulgate} 
+\input{sources/psalmi/psautierfillion}
+\input{sources/antiphonae}
+\input{sources/hymni}
+\input{sources/lectiones}
+\input{sources/orationes}
+\input{sources/responsoria}
+\input{sources/varia}
+\input{sources/versiculi}
+\input{sources/biblia/is}
+\input{sources/biblia/isfr}
+\input{sources/biblia/lc}
+\input{sources/biblia/lcfr}
+
+\maketitle
+
+% #############################################################################
+
+\frontmatter
+
+% INTRODUCTION
+\include{document/intro}
+
+\mainmatter
+
+\part{Psautier}
+\include{document/psautier/dimanche}
+
+\part{Propre du Temps}
+% TEMPS DE L'AVENT
+\include{document/temporal/avent}
+
+
+\backmatter
+\part{Tables}
+
+\printindex{antiphonae}{Antiennes}
+\printindex{responsoria}{Répons brefs}
+\printindex{orationes}{Oraisons}
+\printindex{hymni}{Hymnes}
+\printindex{psalmi}{Psaumes}
+\printindex{vetus}{Ancien Testament}
+\printindex{novum}{Nouveau Testament}
+\printindex{lectiones}{Lectures}
+
+\tableofcontents
+
+
+\end{document}

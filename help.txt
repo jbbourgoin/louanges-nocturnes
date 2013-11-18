@@ -1,0 +1,12 @@
+Aide
+
+------------
+Sections personnalisées (sans numérotation, inclues dans la table des matières) :
+
+\chapter -> \CHAPITRE
+\section -> \SECTION
+\subsection -> \SUBSECTION
+
+\PSALMUS{}{}{}
+
+\ANTIPHON{\antlatin}{\antlangue}{nom}

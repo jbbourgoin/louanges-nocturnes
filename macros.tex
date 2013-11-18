@@ -1,0 +1,242 @@
+\newcommand{\AVANTJXXIII}{
+\rule{5.2cm}{0.2cm} \emph{avant 1960} \rule{5.2cm}{0.2cm}
+}
+
+\newcommand{\EAVANTJXXIII}{
+\rule{5.1cm}{0.2cm} FIN \emph{avant 1960} \rule{5.1cm}{0.2cm}
+}
+
+\newcommand{\Respons}{{\freeserif \char"211F}}
+\newcommand{\Versicle}{{\freeserif \char"2123}}
+
+% fontes
+\newcommand{\fontlat}[1]{\begin{otherlanguage}{latin} {\biolinum #1} \end{otherlanguage}}
+\newcommand{\fontfr}[1]{\begin{otherlanguage}{french} #1 \end{otherlanguage}}
+
+\newcommand{\CHAPTER}[1]
+{
+  \chapter*{#1}
+  \addcontentsline{toc}{chapter}{#1}
+}
+
+\newcommand{\SECTION}[1]
+{
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\SUBSECTION}[1]
+{
+  \subsection*{#1}
+  \addcontentsline{toc}{subsection}{#1}
+}
+
+%%%% PARALLEL %%%
+
+\newcommand{\BEGINPARA}{\begin{Parallel}[c]{0.44\textwidth}{0.51\textwidth}}
+\newcommand{\ENDPARA}{\end{Parallel}}
+\newcommand{\BLEFT}{\selectlanguage{french}\ParallelLText}
+\newcommand{\ELEFT}{}
+\newcommand{\BRIGHT}{\selectlanguage{french}\ParallelRText}
+\newcommand{\ERIGHT}{}
+
+%% Insertion sur deux colonnes simplifiée
+
+\newcommand{\CCOL}[2]{ \BEGINPARA \BLEFT { \fontlat #1 \ELEFT } \BRIGHT { \fontfr #2 \ERIGHT } \ENDPARA}
+\newcommand{\CCOLT}[3]{ \subsection*{#3} \BEGINPARA \BLEFT { \fontlat #1 \ELEFT } \BRIGHT { \fontfr #2 \ERIGHT } \ENDPARA}
+
+%% VERSETS
+
+\newcommand{\VERSE}{\item}
+\newcommand{\EVERSE}{\\}
+
+
+%% MACROS INSERTION
+
+% \HYMNUS{\cmdlat}{\cmdfr}{Nom}
+\newcommand\HYMNUS[3]
+{
+\subsection*{Hymne}
+  \subsubsection*{#3\index{hymni}{#3}}
+  \BEGINPARA
+  \BLEFT
+  {%para
+	\fontlat{#1}
+    \ELEFT
+  }%para
+  \BRIGHT
+  {%para
+	\fontfr{#2}
+    \ERIGHT
+  }%para
+  \ENDPARA
+}
+
+% ANTIPHONÆ
+\newcommand{\ANTIPHON}[3]
+{
+  \BEGINPARA
+  \BLEFT
+  {%para
+    \fontlat{#1}\index{antiphonae}{#3}
+    \ELEFT
+  }%para
+  \BRIGHT
+  {%para
+    \fontfr{#2}
+    \ERIGHT
+  }%para
+  \ENDPARA
+}
+
+% \PSALMUS{counter}{\cmdlat}{\cmdfr}{Nom}
+\newcommand{\BVERSELIST}{\begin{inparaenum}[\bfseries 1\/]}
+\newcommand{\EVERSELIST}{\end{inparaenum}}
+\newcommand{\PSALMUS}[4][0]
+{
+  \subsection*{Psaume #4\index{psalmi}{#4}}
+  \BEGINPARA
+  \BLEFT
+  {%para
+    \BVERSELIST
+    \addtocounter{enumi}{#1}
+    \fontlat{#2}
+    \EVERSELIST
+    \ELEFT
+  }%para
+  \BRIGHT
+  {%para
+    \BVERSELIST
+    \addtocounter{enumi}{#1}
+    \fontfr{#3}
+    \EVERSELIST
+    \ERIGHT
+  }%para
+  \ENDPARA
+  \gloriapatri
+}
+
+
+% VETUS TESTAMENTUM
+\newcommand{\VETUS}[5][0]
+{
+\subsection*{#5}
+  \renewcommand{\EVERSE}{}
+  \subsubsection*{#4\index{vetus}{#4}}
+  \BEGINPARA
+  \BLEFT
+  {%para
+    \BVERSELIST
+    \addtocounter{enumi}{#1}
+    \fontlat{#2}
+    \EVERSELIST
+    \ELEFT
+  }%para
+  \BRIGHT
+  {%para
+    \BVERSELIST
+    \addtocounter{enumi}{#1}
+    \fontfr{#3}
+    \EVERSELIST
+    \ERIGHT
+  }%para
+  \ENDPARA
+  \renewcommand{\EVERSE}{\\}
+  \CCOL{\tuautemdomine}{\tuautemdominefr}
+}
+
+% NOVUM TESTAMENTUM
+\newcommand{\NOVUM}[5][0]
+{
+\subsection*{#5}
+  \renewcommand{\EVERSE}{}
+  \subsubsection*{#4\index{novum}{#4}}
+  \BEGINPARA
+  \BLEFT
+  {%para
+    \BVERSELIST
+    \addtocounter{enumi}{#1}
+    \fontlat{#2}
+    \EVERSELIST
+    \ELEFT
+  }%para
+  \BRIGHT
+  {%para
+    \BVERSELIST
+    \addtocounter{enumi}{#1}
+    \fontfr{#3}
+    \EVERSELIST
+    \ERIGHT
+  }%para
+  \ENDPARA
+  \renewcommand{\EVERSE}{\\}
+}
+
+% LECTIONES
+\newcommand{\LECTIO}[3]
+{
+  \subsubsection*{#3\index{lectiones}{#3}}
+  \BEGINPARA
+  \BLEFT
+  {%para
+    \fontlat{#1}
+    \ELEFT
+  }%para
+  \BRIGHT
+  {%para
+    \fontfr{#2}
+    \ERIGHT
+  }%para
+  \ENDPARA
+  \CCOL{\tuautemdomine}{\tuautemdominefr}
+}
+
+\newcommand{\ORATIO}[3]
+{\subsection*{Collecte}
+\BEGINPARA \BLEFT {
+\fontlat{\Versicle. Dómine exáudi oratiónem meam. \\
+\Respons. Et clamor meus ad te véniat. \\
+Oremus.}
+ \ELEFT } \BRIGHT {
+\fontfr{\Versicle. Seigneur, veuillez exaucer ma prière. \\
+\Respons. Et que mon cri parvienne jusqu'à Vous. \\
+Prions.}
+\ERIGHT } \ENDPARA
+\BEGINPARA
+\BLEFT
+{ \fontlat #1 \ELEFT }
+\BRIGHT
+{ \fontfr #2 \ERIGHT }
+\ENDPARA
+\begin{quote}Amen\end{quote}
+}
+
+\newcommand{\VERSI}[1]{\begin{quotation}\noindent#1\end{quotation}}
+
+% TITRE
+
+\makeatletter
+\def\maketitle{
+  \begin{titlepage}
+    \begin{center}
+      {\Large \@author}
+      \null\vfill
+    \end{center}
+    \begin{center}
+      {\huge \@title}\\
+      \vskip 0.5cm
+      {\Large \emph{\@subtitle}}
+      % \vskip 1cm
+      % {\texttt{\@email}}
+      \vskip 2cm
+      % {\Large \@date}
+      {\normalsize {\it
+          \emph{1\iere{} édition bilingue} latin-français.}}
+      \vfill\null
+      {\small Creative Commons BY-NC-SA}
+    \end{center}
+  \end{titlepage}
+}
+\def\email#1{\def\@email{#1}}
+\def\subtitle#1{\def\@subtitle{#1}}
+\makeatother

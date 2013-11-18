@@ -1,0 +1,41 @@
+#### Pour le dimanche
+
+\SECTION{}
+
+\dominelabiamea
+
+\ANTIPHON{}{}{}
+
+\begin{quote}\emph{Venite, exultemus Domino ...}\end{quote}
+
+\HYMNUS{}{}{}
+
+\begin{quote}\emph{Antiennes et psaumes au psautier selon la saison}\end{quote}
+
+\VERSI{\exsionspecies}
+
+\paternoster
+
+\VERSI{\iubeillenos}
+
+\VETUS{}{}{Lectio 1}
+\VERSI{}
+
+\VERSI{\iubedivinum}
+
+\VETUS[3]{}{}{}{Lectio 2}
+\VERSI{}
+
+\VERSI{\iubeevangelica}
+
+\NOVUM{}{}{}{Lectio 3}
+\LECTIO{}{}{}
+\VERSI{}
+
+\ORATIO{}{}
+
+\conclusio
+
+
+
+#### Pour la semaine
