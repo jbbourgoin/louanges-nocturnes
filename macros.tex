@@ -1,17 +1,10 @@
-\newcommand{\AVANTJXXIII}{
-\rule{5.2cm}{0.2cm} \emph{avant 1960} \rule{5.2cm}{0.2cm}
-}
-
-\newcommand{\EAVANTJXXIII}{
-\rule{5.1cm}{0.2cm} FIN \emph{avant 1960} \rule{5.1cm}{0.2cm}
-}
-
 \newcommand{\Respons}{{\freeserif \char"211F}}
 \newcommand{\Versicle}{{\freeserif \char"2123}}
 
 % fontes
-\newcommand{\fontlat}[1]{\begin{otherlanguage}{latin} {\biolinum #1} \end{otherlanguage}}
-\newcommand{\fontfr}[1]{\begin{otherlanguage}{french} #1 \end{otherlanguage}}
+\newcommand{\fontlat}[1]{\biolinum #1}
+\newcommand{\fontfr}[1]{#1}
+
 
 \newcommand{\CHAPTER}[1]
 {
@@ -33,12 +26,19 @@
 
 %%%% PARALLEL %%%
 
-\newcommand{\BEGINPARA}{\begin{Parallel}[c]{0.44\textwidth}{0.51\textwidth}}
+\newcommand{\BEGINPARA}{\begin{Parallel}[c]{0.47\textwidth}{0.47\textwidth}}
 \newcommand{\ENDPARA}{\end{Parallel}}
 \newcommand{\BLEFT}{\selectlanguage{french}\ParallelLText}
 \newcommand{\ELEFT}{}
 \newcommand{\BRIGHT}{\selectlanguage{french}\ParallelRText}
 \newcommand{\ERIGHT}{}
+\newcommand{\LR}[2]{\selectlanguage{french}\ParallelLText{\fontlat{#1}}
+                   \selectlanguage{french}\ParallelRText{\fontfr{#2}}\ParallelPar}
+
+  \newcommand{\BEGINENLUL}{\noindent\begin{minipage}[t]{0.47\textwidth}}
+  \newcommand{\BEGINENLUR}{\noindent\begin{minipage}[t]{0.47\textwidth}}
+    \newcommand{\ENDENLU}{\end{minipage}}
+
 
 %% Insertion sur deux colonnes simplifiée
 
@@ -89,33 +89,13 @@
   \ENDPARA
 }
 
-% \PSALMUS{counter}{\cmdlat}{\cmdfr}{Nom}
-\newcommand{\BVERSELIST}{\begin{inparaenum}[\bfseries 1\/]}
-\newcommand{\EVERSELIST}{\end{inparaenum}}
-\newcommand{\PSALMUS}[4][0]
+\newcommand{\PSALMUS}[2]
 {
-  \subsection*{Psaume #4\index{psalmi}{#4}}
-  \BEGINPARA
-  \BLEFT
-  {%para
-    \BVERSELIST
-    \addtocounter{enumi}{#1}
-    \fontlat{#2}
-    \EVERSELIST
-    \ELEFT
-  }%para
-  \BRIGHT
-  {%para
-    \BVERSELIST
-    \addtocounter{enumi}{#1}
-    \fontfr{#3}
-    \EVERSELIST
-    \ERIGHT
-  }%para
-  \ENDPARA
-  \gloriapatri
+\subsubsection*{Psaume #1\index{psalmi}{#1}}
+\BEGINPARA
+#2
+\ENDPARA
 }
-
 
 % VETUS TESTAMENTUM
 \newcommand{\VETUS}[5][0]
